@@ -111,7 +111,7 @@ mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dep
 ```
 
 
-## Deploy Artifact
+## Publish Artifact
 
 ```
 mvn deploy --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml
