@@ -8,10 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 public class ExceptionLogUtil {
 
 	private static GenericException getGenericException(Exception e, String customMessage) {
-		if (null != customMessage && !customMessage.trim().isEmpty()) {
-			return new GenericException(e, customMessage);
-		} else {
+		if (null == customMessage || customMessage.trim().isEmpty()) {
 			return new GenericException(e);
+		} else {
+			return new GenericException(e, customMessage);
 		}
 	}
 
