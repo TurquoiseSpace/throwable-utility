@@ -19,12 +19,15 @@ public class ExceptionPoint implements Serializable {
 
 	}
 
-	public ExceptionPoint(StackTraceElement stackTraceElement) {
-		fileName = stackTraceElement.getFileName();
-		className = stackTraceElement.getClassName();
-		methodName = stackTraceElement.getMethodName();
-		lineNumber = stackTraceElement.getLineNumber();
-		nativeMethod = stackTraceElement.isNativeMethod();
+	public ExceptionPoint(StackTraceElement stackTraceElement) throws RuntimeException {
+		if (null == stackTraceElement) {
+			throw new RuntimeException("StackTraceElement cannot be null");
+		}
+		this.fileName = stackTraceElement.getFileName();
+		this.className = stackTraceElement.getClassName();
+		this.methodName = stackTraceElement.getMethodName();
+		this.lineNumber = stackTraceElement.getLineNumber();
+		this.nativeMethod = stackTraceElement.isNativeMethod();
 	}
 
 }

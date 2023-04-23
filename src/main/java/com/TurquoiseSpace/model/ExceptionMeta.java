@@ -12,7 +12,7 @@ public class ExceptionMeta implements Serializable {
 	private String classType;
 	private String message;
 	private String customMessage;
-	private Throwable cause;
+	private GenericException cause;
 
 	public ExceptionMeta() {
 
@@ -21,7 +21,7 @@ public class ExceptionMeta implements Serializable {
 	public ExceptionMeta(String classType, String message, Throwable cause) {
 		this.classType = classType;
 		this.message = message;
-		this.cause = cause;
+		this.cause = new GenericException(cause);
 	}
 
 }

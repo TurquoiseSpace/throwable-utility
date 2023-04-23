@@ -6,7 +6,9 @@ import java.util.TreeMap;
 import java.util.stream.IntStream;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Data
 public class GenericException implements Serializable {
 
@@ -16,26 +18,28 @@ public class GenericException implements Serializable {
 
 	private ExceptionMeta exceptionMeta;
 
-	public void addTraceHeirarchy(int index, StackTraceElement stackTraceElement) {
-		ExceptionPoint exceptionPoint = new ExceptionPoint(stackTraceElement);
+	private void addTraceHeirarchy(int index, StackTraceElement stackTraceElement) {
+		ExceptionPoint exceptionPoint = null;
+		try {
+			exceptionPoint = new ExceptionPoint(stackTraceElement);
+		} catch (RuntimeException runtimeException) {
+			log.error("encountered RuntimeException", runtimeException);
+		}
 		this.exceptionTraceHeirarchy.put(index, exceptionPoint);
 	}
 
-	public void setTraceHeirarchy(StackTraceElement[] stackTraceElements) {
+	protected void setTraceHeirarchy(StackTraceElement[] stackTraceElements) {
 		this.exceptionTraceHeirarchy = new TreeMap<Integer, ExceptionPoint>();
-
-		// Parallel
-		IntStream intStream = IntStream.range(0, stackTraceElements.length).parallel();
-		intStream.forEach(index -> this.addTraceHeirarchy(index, stackTraceElements[index]));
-
-		// Sequential
-		/*
-		 * for (StackTraceElement stackTraceElement : stackTraceElements) {
-		 * this.addFatneKiHeirarchy(stackTraceElement); }
-		 */
+		if (null == stackTraceElements) {
+			return;
+		}
+		for (int index = 0; index < stackTraceElements.length; index++) {
+			StackTraceElement stackTraceElement = stackTraceElements[index];
+			this.addTraceHeirarchy(index, stackTraceElement);
+		}
 	}
 
-	public void setMeta(String classType, String message, Throwable cause) {
+	protected void setMeta(String classType, String message, Throwable cause) {
 		this.exceptionMeta = new ExceptionMeta(classType, message, cause);
 	}
 
@@ -43,14 +47,17 @@ public class GenericException implements Serializable {
 
 	}
 
-	public GenericException(Exception e) {
-		this.setTraceHeirarchy(e.getStackTrace());
-		this.setMeta(e.getClass().getName(), e.getMessage(), e.getCause());
+	public GenericException(Throwable throwable) throws RuntimeException {
+		if (null == throwable) {
+			throw new RuntimeException("Throwable cannot be null");
+		}
+		this.setMeta(throwable.getClass().getName(), throwable.getMessage(), throwable.getCause());
+		this.setTraceHeirarchy(throwable.getStackTrace());
 	}
 
-	public GenericException(Exception e, String customeMessage) {
-		this(e);
-		this.getExceptionMeta().setCustomMessage(customeMessage);;
+	public GenericException(Throwable throwable, String customMessage) throws RuntimeException {
+		this(throwable);
+		this.exceptionMeta.setCustomMessage(customMessage);
 	}
 
 }
