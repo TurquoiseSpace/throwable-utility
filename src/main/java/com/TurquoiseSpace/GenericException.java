@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.IntStream;
 
+import com.TurquoiseSpace.model.ExceptionMeta;
+
 import lombok.Data;
 
 @Data
