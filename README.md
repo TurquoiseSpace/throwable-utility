@@ -24,26 +24,26 @@ Java's Throwable JSON Transformer Module
 <dependency>
     <groupId>com.github.TurquoiseSpace</groupId>
     <artifactId>throwable-utility</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
 - Gradle
 
 ```
-implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.3'
+implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.4'
 ```
 
 - Gradle (Short)
 
 ```
-implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.3'
+implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.4'
 ```
 
 - Gradle (Kotlin)
 
 ```
-implementation("com.github.TurquoiseSpace:throwable-utility:0.0.3")
+implementation("com.github.TurquoiseSpace:throwable-utility:0.0.4")
 ```
 
 
