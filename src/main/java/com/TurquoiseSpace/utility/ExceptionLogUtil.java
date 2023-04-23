@@ -1,8 +1,8 @@
-package com.TurquoiseSpace;
+package com.TurquoiseSpace.utility;
 
 import org.springframework.stereotype.Component;
 
-import com.TurquoiseSpace.utility.JsonUtil;
+import com.TurquoiseSpace.GenericException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,8 +28,16 @@ public class ExceptionLogUtil {
 		log.error(jsonUtil.convertObjectToJson(getGenericException(e, customMessage)));
 	}
 
+	public void logException(Exception e) {
+		logException(e, null);
+	}
+
 	public String getLocalizedExceptionJson(Exception e, String customMessage) {
 		return jsonUtil.convertObjectToJson(getGenericException(e, customMessage));
+	}
+
+	public String getLocalizedExceptionJson(Exception e) {
+		return getLocalizedExceptionJson(e, null);
 	}
 
 }
