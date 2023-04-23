@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.TurquoiseSpace.constant.ThrowableConstants;
+
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,8 +23,8 @@ public class GenericException implements Serializable {
 		ExceptionPoint exceptionPoint = null;
 		try {
 			exceptionPoint = new ExceptionPoint(stackTraceElement);
-		} catch (RuntimeException runtimeException) {
-			log.error("encountered RuntimeException", runtimeException);
+		} catch (RuntimeException exception) {
+			log.error(ThrowableConstants.THROWABLE_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
 		}
 		this.exceptionTraceHeirarchy.put(index, exceptionPoint);
 	}

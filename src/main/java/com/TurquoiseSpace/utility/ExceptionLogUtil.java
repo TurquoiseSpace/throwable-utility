@@ -1,5 +1,6 @@
 package com.TurquoiseSpace.utility;
 
+import com.TurquoiseSpace.constant.ThrowableConstants;
 import com.TurquoiseSpace.model.GenericException;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +18,9 @@ public class ExceptionLogUtil {
 
 	public static String getExceptionJson(Exception e, String customMessage) {
 		GenericException genericException = makeGenericException(e, customMessage);
-		return JsonUtil.convertObjectToJson(genericException);
+		String exceptionJson = JsonUtil.convertObjectToJson(genericException);
+		log.debug(ThrowableConstants.THROWABLE_PARSED, exceptionJson);
+		return exceptionJson;
 	}
 
 	public static String getExceptionJson(Exception e) {
