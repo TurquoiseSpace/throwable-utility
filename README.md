@@ -26,3 +26,18 @@ this provides better readibilty in AWS Cloud Watch, and easy to search, by provi
 mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dependency:go-offline dependency:resolve-plugins install -e
 ```
 
+
+## Package
+
+```
+mvn -B package --file pom.xml
+```
+
+
+## Deploy Artifact
+
+```
+mvn deploy --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml
+```
+
+
