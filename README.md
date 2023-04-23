@@ -3,7 +3,7 @@
 # Throwable Utility
 
 
-Throwable JSON Transformer Module
+Java's Throwable JSON Transformer Module
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.TurquoiseSpace/throwable-utility.svg?label=Maven%20Central)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/)
 
@@ -15,7 +15,65 @@ Throwable JSON Transformer Module
 
 
 
-## Help - Starting off with "Throwable Utility"
+## Usage as Dependency
+
+
+- Maven
+
+```
+<dependency>
+    <groupId>com.github.TurquoiseSpace</groupId>
+    <artifactId>throwable-utility</artifactId>
+    <version>0.0.3</version>
+</dependency>
+```
+
+- Gradle
+
+```
+implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.3'
+```
+
+- Gradle (Short)
+
+```
+implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.3'
+```
+
+- Gradle (Kotlin)
+
+```
+implementation("com.github.TurquoiseSpace:throwable-utility:0.0.3")
+```
+
+
+
+### Description
+
+The main Utility class `ExceptionLogUtil.java` actually logs the Exception in JSON format, for better readibilty, or gives the Throwable JSON.
+
+The other Utility class `JsonUtil.java` is meant for mapping any Object to JSON, or vice versa.
+
+Can be easily viewed in AWS Cloud Watch or DataDog or Splunk.
+
+Easy to search, by providing whole paragraph of Exception log in one single line.
+
+
+
+### Log Search KeyWords
+
+
+```
+exceptionTraceHeirarchy
+```
+
+```
+exceptionMeta
+```
+
+
+
+## Help - Starting off with the Code of "Throwable Utility" Repository
 
 
 The actual code is located inside
@@ -37,27 +95,6 @@ and in java files
 		GenericException.java
 		ExceptionMeta.java
 		ExceptionPoint.java
-
-
-### Description
-
-The Utility classes `JsonUtil.java` or `GenericJsonUtil.java` are meant for mapping any Object to JSON, or vice versa
-
-While `ExceptionLogUtil.java` logs the Exception in JSON format, for better readibilty.
-Can be easily viewed in AWS Cloud Watch or DataDog or Splunk.
-Easy to search, by providing whole paragraph of Exception log in one single line
-
-
-### Log Search KeyWords
-
-
-```
-exceptionTraceHeirarchy
-```
-
-```
-exceptionMeta
-```
 
 
 
@@ -93,6 +130,7 @@ gpg --keyserver hkp://pgp.mit.edu --send-keys 876A6DD3FB3573F1
 ```
 
 
+
 ## Build
 
 
@@ -107,6 +145,7 @@ mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dep
 ```
 mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dependency:go-offline install --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml
 ```
+
 
 
 ## Publish Artifact
