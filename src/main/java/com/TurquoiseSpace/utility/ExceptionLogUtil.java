@@ -2,7 +2,7 @@ package com.TurquoiseSpace.utility;
 
 import org.springframework.stereotype.Component;
 
-import com.TurquoiseSpace.GenericException;
+import com.TurquoiseSpace.model.GenericException;
 
 import lombok.extern.slf4j.Slf4j;
 
