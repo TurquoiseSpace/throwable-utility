@@ -1,22 +1,13 @@
 package com.TurquoiseSpace.utility;
 
-import org.springframework.stereotype.Component;
-
 import com.TurquoiseSpace.model.GenericException;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Component
 public class ExceptionLogUtil {
 
-	JsonUtil<GenericException> jsonUtil = new JsonUtil<GenericException>();
-
-	public ExceptionLogUtil() {
-
-	}
-
-	private GenericException getGenericException(Exception e, String customMessage) {
+	private static GenericException getGenericException(Exception e, String customMessage) {
 		if (null != customMessage && !customMessage.trim().isEmpty()) {
 			return new GenericException(e, customMessage);
 		} else {
@@ -24,20 +15,22 @@ public class ExceptionLogUtil {
 		}
 	}
 
-	public void logException(Exception e, String customMessage) {
-		log.error(jsonUtil.convertObjectToJson(getGenericException(e, customMessage)));
+	public static String getLocalizedExceptionJson(Exception e, String customMessage) {
+		GenericException genericException = getGenericException(e, customMessage);
+		return JsonUtil.convertObjectToJson(genericException);
 	}
 
-	public void logException(Exception e) {
-		logException(e, null);
-	}
-
-	public String getLocalizedExceptionJson(Exception e, String customMessage) {
-		return jsonUtil.convertObjectToJson(getGenericException(e, customMessage));
-	}
-
-	public String getLocalizedExceptionJson(Exception e) {
+	public static String getLocalizedExceptionJson(Exception e) {
 		return getLocalizedExceptionJson(e, null);
+	}
+
+	public static void logException(Exception e, String customMessage) {
+		String exceptionJson = getLocalizedExceptionJson(e, customMessage);
+		log.error(exceptionJson);
+	}
+
+	public static void logException(Exception e) {
+		logException(e, null);
 	}
 
 }
