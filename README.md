@@ -20,10 +20,33 @@ this provides better readibilty in AWS Cloud Watch, and easy to search, by provi
 
 
 
+## GPG Keys
+
+- Check existing GPG Keys
+
+```
+gpg --list-secret-keys --keyid-format LONG
+```
+
+- Generate GPG Key
+
+```
+gpg --gen-key
+```
+
+
 ## Build
+
+- Normal Sanity
 
 ```
 mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dependency:go-offline dependency:resolve-plugins install -e
+```
+
+- With OSSRH Sonatype
+
+```
+mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dependency:go-offline install --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml
 ```
 
 
@@ -35,6 +58,14 @@ mvn -B package --file pom.xml
 
 
 ## Deploy Artifact
+
+- Staging
+
+```
+mvn nexus-staging:release --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml -DstagingRepositoryId=ossrh
+```
+
+- Prod
 
 ```
 mvn deploy --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml
