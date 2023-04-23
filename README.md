@@ -13,6 +13,8 @@ Java's Throwable JSON Transformer Module
 
 [MVN Repository](https://mvnrepository.com/artifact/com.github.TurquoiseSpace/throwable-utility)
 
+[Nexus Repository Manager](https://oss.sonatype.org/#nexus-search;quick~throwable-utility)
+
 
 
 ## Usage as Dependency
