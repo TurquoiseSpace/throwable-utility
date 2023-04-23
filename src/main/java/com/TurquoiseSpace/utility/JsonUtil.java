@@ -1,4 +1,4 @@
-package com.TurquoiseSpace;
+package com.TurquoiseSpace.utility;
 
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;

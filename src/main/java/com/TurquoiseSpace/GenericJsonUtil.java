@@ -3,6 +3,8 @@ package com.TurquoiseSpace;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.TurquoiseSpace.utility.JsonUtil;
+
 public class GenericJsonUtil {
 
 	private static Map<Class<?>, JsonUtil<?>> jsonUtilMapper;
