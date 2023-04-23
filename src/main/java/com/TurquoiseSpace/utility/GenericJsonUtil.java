@@ -1,9 +1,7 @@
-package com.TurquoiseSpace;
+package com.TurquoiseSpace.utility;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import com.TurquoiseSpace.utility.JsonUtil;
 
 public class GenericJsonUtil {
 
