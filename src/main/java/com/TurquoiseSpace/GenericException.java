@@ -6,6 +6,7 @@ import java.util.TreeMap;
 import java.util.stream.IntStream;
 
 import com.TurquoiseSpace.model.ExceptionMeta;
+import com.TurquoiseSpace.model.ExceptionPoint;
 
 import lombok.Data;
 

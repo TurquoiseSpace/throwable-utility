@@ -1,4 +1,4 @@
-package com.TurquoiseSpace;
+package com.TurquoiseSpace.model;
 
 import java.io.Serializable;
 
