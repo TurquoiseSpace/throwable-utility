@@ -34,6 +34,22 @@ gpg --list-secret-keys --keyid-format LONG
 gpg --gen-key
 ```
 
+- Receive GPG Key from Servers
+
+```
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 876A6DD3FB3573F1
+gpg --keyserver hkp://keys.openpgp.org --recv-keys 876A6DD3FB3573F1
+gpg --keyserver hkp://pgp.mit.edu --recv-keys 876A6DD3FB3573F1
+```
+
+- Send GPG Key to Servers
+
+```
+gpg --keyserver hkp://keyserver.ubuntu.com --send-keys 876A6DD3FB3573F1
+gpg --keyserver hkp://keys.openpgp.org --send-keys 876A6DD3FB3573F1
+gpg --keyserver hkp://pgp.mit.edu --send-keys 876A6DD3FB3573F1
+```
+
 
 ## Build
 
@@ -50,22 +66,7 @@ mvn -Dmaven.artifact.threads=25 clean eclipse:eclipse -DdownloadSources=true dep
 ```
 
 
-## Package
-
-```
-mvn -B package --file pom.xml
-```
-
-
 ## Deploy Artifact
-
-- Staging
-
-```
-mvn nexus-staging:release --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml -DstagingRepositoryId=ossrh
-```
-
-- Prod
 
 ```
 mvn deploy --settings /home/mafia/.m2/setting.xml --global-settings /space/tools/apache-maven-3.6.3/conf/settings.xml
