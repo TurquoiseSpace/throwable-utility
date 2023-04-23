@@ -37,10 +37,9 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.projectlombok.lombok.version>1.16.12</org.projectlombok.lombok.version>
-		<org.codehaus.jackson.jackson-mapper-asl.version>1.9.13</org.codehaus.jackson.jackson-mapper-asl.version>
-		<org.springframework.spring-context.version>5.1.2.RELEASE</org.springframework.spring-context.version>
-		<org.slf4j.log4j-over-slf4j.version>1.7.30</org.slf4j.log4j-over-slf4j.version>
+		<org.projectlombok.lombok.version>1.18.26</org.projectlombok.lombok.version>
+		<com.fasterxml.jackson.core.jackson-databind.version>2.14.2</com.fasterxml.jackson.core.jackson-databind.version>
+		<org.slf4j.log4j-over-slf4j.version>2.0.7</org.slf4j.log4j-over-slf4j.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -53,9 +52,9 @@
 			<version>${org.projectlombok.lombok.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${org.codehaus.jackson.jackson-mapper-asl.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${com.fasterxml.jackson.core.jackson-databind.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>

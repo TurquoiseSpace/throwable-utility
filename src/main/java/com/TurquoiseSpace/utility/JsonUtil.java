@@ -1,10 +1,9 @@
 package com.TurquoiseSpace.utility;
 
-import org.codehaus.jackson.map.DeserializationConfig;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-
 import com.TurquoiseSpace.constant.ThrowableConstants;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,8 +13,8 @@ public class JsonUtil {
 	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
 	private static void configureObjectMapper() {
-		OBJECT_MAPPER.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		OBJECT_MAPPER.configure(SerializationConfig.Feature.WRITE_NULL_PROPERTIES, false);
+		OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		OBJECT_MAPPER.setSerializationInclusion(Include.NON_NULL);
 	}
 
 	static {
