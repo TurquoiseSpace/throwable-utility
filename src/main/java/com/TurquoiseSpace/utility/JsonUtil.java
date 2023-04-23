@@ -23,7 +23,7 @@ public class JsonUtil {
 	}
 
 	public static <T> String convertObjectToJson(T object) {
-		log.debug("convert object to json -> (className) {} (object) {}", object.getClass().getName(), object.toString());
+		log.trace("convert object to json -> (className) {} (object) {}", object.getClass().getName(), object);
 		try {
 			return OBJECT_MAPPER.writeValueAsString(object);
 		} catch (Exception exception) {
@@ -33,7 +33,7 @@ public class JsonUtil {
 	}
 
 	public static <T> T convertJsonToObject(String json, Class<T> clazz) {
-		log.debug("convert json to object -> (className) {} (json) {}", clazz.getName(), json);
+		log.trace("convert json to object -> (className) {} (json) {}", clazz.getName(), json);
 		try {
 			return OBJECT_MAPPER.readValue(json, clazz);
 		} catch (Exception exception) {
