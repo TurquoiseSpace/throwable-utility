@@ -17,21 +17,54 @@ Throwable JSON Transformer Module
 
 
 
-## Description
+## Help - Starting off with "Throwable Utility"
 
-utility classes for :
 
-1) json mapper of any class (JsonUtil.java / GenericJsonUtil.java)
-->
-convert Object to JsonString, or JsonString to Object
+The actual code is located inside
 
-2) logging Exception in json format (ExceptionLogUtil.java)
-->
-this provides better readibilty in AWS Cloud Watch, and easy to search, by providing whole paragraph of Exception log in one single line, just search for "exceptionTraceHeirarchy" or "exceptionMeta"
+	./src/main/java/
+
+with the base package as
+
+	com.TurquoiseSpace
+
+and child packages (shows the call heirarchy from top to bottom)
+and in java files
+
+	utility
+		ExceptionLogUtil.java
+		GenericJsonUtil.java
+		JsonUtil.java
+	model
+		GenericException.java
+		ExceptionMeta.java
+		ExceptionPoint.java
+
+
+### Description
+
+The Utility classes `JsonUtil.java` or `GenericJsonUtil.java` are meant for mapping any Object to JSON, or vice versa
+
+While `ExceptionLogUtil.java` logs the Exception in JSON format, for better readibilty.
+Can be easily viewed in AWS Cloud Watch or DataDog or Splunk.
+Easy to search, by providing whole paragraph of Exception log in one single line
+
+
+### Log Search KeyWords
+
+
+```
+exceptionTraceHeirarchy
+```
+
+```
+exceptionMeta
+```
 
 
 
 ## GPG Keys
+
 
 - Check existing GPG Keys
 
@@ -63,6 +96,7 @@ gpg --keyserver hkp://pgp.mit.edu --send-keys 876A6DD3FB3573F1
 
 
 ## Build
+
 
 - Normal Sanity
 
