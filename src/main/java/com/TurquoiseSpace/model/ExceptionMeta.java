@@ -21,7 +21,9 @@ public class ExceptionMeta implements Serializable {
 	public ExceptionMeta(String classType, String message, Throwable cause) {
 		this.classType = classType;
 		this.message = message;
-		this.cause = new GenericException(cause);
+		if (null != cause) {
+			this.cause = new GenericException(cause);
+		}
 	}
 
 }
