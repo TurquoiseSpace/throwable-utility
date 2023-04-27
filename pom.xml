@@ -6,7 +6,7 @@
 
 	<groupId>com.github.TurquoiseSpace</groupId>
 	<artifactId>throwable-utility</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6</version>
 
 	<name>Throwable Utility</name>
 	<description>Throwable JSON Transformer Module</description>
