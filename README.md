@@ -9,6 +9,11 @@ Java's Throwable JSON Transformer Module
 
 [![Java Doc](https://javadoc.io/badge2/com.github.TurquoiseSpace/throwable-utility/javadoc.svg)](https://javadoc.io/doc/com.github.TurquoiseSpace/throwable-utility)
 
+![GitHub all releases](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/total)
+
+![GitHub release (latest by date)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/0.0.6/total)
+
+
 [Maven Central Sonatype Search](https://central.sonatype.com/artifact/com.github.TurquoiseSpace/throwable-utility)
 
 [MVN Repository](https://mvnrepository.com/artifact/com.github.TurquoiseSpace/throwable-utility)
