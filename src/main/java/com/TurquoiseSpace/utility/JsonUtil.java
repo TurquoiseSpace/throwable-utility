@@ -1,6 +1,6 @@
 package com.TurquoiseSpace.utility;
 
-import com.TurquoiseSpace.constant.ThrowableConstants;
+import com.TurquoiseSpace.constant.ExceptionConstants;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,7 +26,7 @@ public class JsonUtil {
 		try {
 			return OBJECT_MAPPER.writeValueAsString(object);
 		} catch (Exception exception) {
-			log.error(ThrowableConstants.THROWABLE_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
+			log.error(ExceptionConstants.EXCEPTION_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
 		}
 		return null;
 	}
@@ -36,7 +36,7 @@ public class JsonUtil {
 		try {
 			return OBJECT_MAPPER.readValue(json, clazz);
 		} catch (Exception exception) {
-			log.error(ThrowableConstants.THROWABLE_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
+			log.error(ExceptionConstants.EXCEPTION_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
 		}
 		return null;
 	}
