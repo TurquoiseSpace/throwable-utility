@@ -6,10 +6,10 @@
 
 	<groupId>com.github.TurquoiseSpace</groupId>
 	<artifactId>throwable-utility</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 
 	<name>Throwable Utility</name>
-	<description>Throwable JSON Transformer Module</description>
+	<description>JSON Friendly Exceptions, Errors and Throwables in Java. Throwable JSON Transformer Module.</description>
 	<url>https://github.com/TurquoiseSpace/throwable-utility</url>
 
 	<licenses>
@@ -37,10 +37,15 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.projectlombok.lombok.version>1.18.26</org.projectlombok.lombok.version>
-		<com.fasterxml.jackson.core.jackson-databind.version>2.14.2</com.fasterxml.jackson.core.jackson-databind.version>
+		<org.projectlombok.lombok.version>1.18.28</org.projectlombok.lombok.version>
+		<com.fasterxml.jackson.core.jackson-databind.version>2.15.1</com.fasterxml.jackson.core.jackson-databind.version>
 		<org.slf4j.log4j-over-slf4j.version>2.0.7</org.slf4j.log4j-over-slf4j.version>
 		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+		<maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
+		<maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
+		<nexus.staging.maven.plugin.version>1.6.8</nexus.staging.maven.plugin.version>
+		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -95,7 +100,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>3.2.1</version>
+				<version>${maven.source.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -108,7 +113,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>${maven.javadoc.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -121,7 +126,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.6</version>
+				<version>${maven.gpg.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
@@ -135,7 +140,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.8</version>
+				<version>${nexus.staging.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>ossrh</serverId>
@@ -146,7 +151,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
+				<version>${maven.release.plugin.version}</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<useReleaseProfile>false</useReleaseProfile>
