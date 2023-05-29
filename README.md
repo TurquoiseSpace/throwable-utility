@@ -11,7 +11,7 @@ Java's Throwable JSON Transformer Module
 
 [![GitHub (All Releases)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/total?color=blue)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/)
 
-[![GitHub (Latest Release)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/throwable-utility-0.0.7/total)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/0.0.7/)
+[![GitHub (Latest Release)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/throwable-utility-0.0.8/total)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/0.0.8/)
 
 
 [Maven Central Sonatype Search](https://central.sonatype.com/artifact/com.github.TurquoiseSpace/throwable-utility)
@@ -31,26 +31,26 @@ Java's Throwable JSON Transformer Module
 <dependency>
     <groupId>com.github.TurquoiseSpace</groupId>
     <artifactId>throwable-utility</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
 </dependency>
 ```
 
 - Gradle
 
 ```
-implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.7'
+implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.8'
 ```
 
 - Gradle (Short)
 
 ```
-implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.7'
+implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.8'
 ```
 
 - Gradle (Kotlin)
 
 ```
-implementation("com.github.TurquoiseSpace:throwable-utility:0.0.7")
+implementation("com.github.TurquoiseSpace:throwable-utility:0.0.8")
 ```
 
 
