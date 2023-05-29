@@ -9,7 +9,7 @@
 	<version>0.0.7</version>
 
 	<name>Throwable Utility</name>
-	<description>JSON Friendly Exceptions, Errors and Throwables in Java. Throwable JSON Transformer Module.</description>
+	<description>JSON Friendly Exceptions, Errors and Throwables in Java. Utility to convert Exception or Throwable into JSON. Log the complete Exception or Throwable as a String. Throwable JSON Transformer Module.</description>
 	<url>https://github.com/TurquoiseSpace/throwable-utility</url>
 
 	<licenses>
@@ -25,6 +25,12 @@
 			<email>matcdac@gmail.com</email>
 			<organization>Turquoise Space</organization>
 			<organizationUrl>https://github.com/TurquoiseSpace</organizationUrl>
+		</developer>
+		<developer>
+			<name>Prakhar Makhija</name>
+			<email>prakhar.makhija@ge.com</email>
+			<organization>General Electric</organization>
+			<organizationUrl>https://www.ge.com/</organizationUrl>
 		</developer>
 	</developers>
 
