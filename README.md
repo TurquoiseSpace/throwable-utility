@@ -11,7 +11,7 @@ Java's Throwable JSON Transformer Module
 
 [![GitHub (All Releases)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/total?color=blue)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/)
 
-[![GitHub (Latest Release)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/throwable-utility-0.0.6/total)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/0.0.6/)
+[![GitHub (Latest Release)](https://img.shields.io/github/downloads/TurquoiseSpace/throwable-utility/throwable-utility-0.0.7/total)](https://repo1.maven.org/maven2/com/github/TurquoiseSpace/throwable-utility/0.0.7/)
 
 
 [Maven Central Sonatype Search](https://central.sonatype.com/artifact/com.github.TurquoiseSpace/throwable-utility)
@@ -22,7 +22,7 @@ Java's Throwable JSON Transformer Module
 
 
 
-## Usage as Dependency
+## Include as Dependency
 
 
 - Maven
@@ -31,31 +31,53 @@ Java's Throwable JSON Transformer Module
 <dependency>
     <groupId>com.github.TurquoiseSpace</groupId>
     <artifactId>throwable-utility</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
 </dependency>
 ```
 
 - Gradle
 
 ```
-implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.6'
+implementation group: 'com.github.TurquoiseSpace', name: 'throwable-utility', version: '0.0.7'
 ```
 
 - Gradle (Short)
 
 ```
-implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.6'
+implementation 'com.github.TurquoiseSpace:throwable-utility:0.0.7'
 ```
 
 - Gradle (Kotlin)
 
 ```
-implementation("com.github.TurquoiseSpace:throwable-utility:0.0.6")
+implementation("com.github.TurquoiseSpace:throwable-utility:0.0.7")
 ```
 
 
 
-### Description
+## Code Usage
+
+
+- Import the class
+
+```
+import com.TurquoiseSpace.utility.ExceptionLogUtil;
+```
+
+- Call one of the static methods
+
+```
+ExceptionLogUtil.logException(exception);
+```
+
+```
+String exceptionJson = ExceptionLogUtil.getExceptionJson(exception);
+```
+
+
+
+## Description
+
 
 The main Utility class `ExceptionLogUtil.java` actually logs the Exception in JSON format, for better readibilty, or gives the Throwable JSON.
 
@@ -67,8 +89,16 @@ Easy to search, by providing whole paragraph of Exception log in one single line
 
 
 
-### Log Search KeyWords
+## KeyWords for searching in Application Logs
 
+
+```
+Encountered Throwable
+```
+
+```
+Parsed Throwable
+```
 
 ```
 exceptionTraceHeirarchy
@@ -80,7 +110,7 @@ exceptionMeta
 
 
 
-## Help - Starting off with the Code of "Throwable Utility" Repository
+## Structure of the Repository
 
 
 The actual code is located inside
@@ -96,8 +126,12 @@ and in java files
 
 	utility
 		ExceptionLogUtil.java
-		GenericJsonUtil.java
+		ThrowableLogUtil.java
 		JsonUtil.java
+	constant
+		ExceptionConstants.java
+		ErrorConstants.java
+		ThrowableConstants.java
 	model
 		GenericException.java
 		ExceptionMeta.java
