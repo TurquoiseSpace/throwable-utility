@@ -6,7 +6,7 @@
 
 	<groupId>com.github.TurquoiseSpace</groupId>
 	<artifactId>throwable-utility</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 
 	<name>Throwable Utility</name>
 	<description>JSON Friendly Exceptions, Errors and Throwables in Java. Utility to convert Exception or Throwable into JSON. Log the complete Exception or Throwable as a String. Throwable JSON Transformer Module.</description>
@@ -46,12 +46,12 @@
 		<org.projectlombok.lombok.version>1.18.28</org.projectlombok.lombok.version>
 		<com.fasterxml.jackson.core.jackson-databind.version>2.15.1</com.fasterxml.jackson.core.jackson-databind.version>
 		<org.slf4j.log4j-over-slf4j.version>2.0.7</org.slf4j.log4j-over-slf4j.version>
-		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-		<maven.source.plugin.version>3.2.1</maven.source.plugin.version>
-		<maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
-		<maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
-		<nexus.staging.maven.plugin.version>1.6.8</nexus.staging.maven.plugin.version>
-		<maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+		<maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+		<maven.source.plugin.version>3.3.0</maven.source.plugin.version>
+		<maven.javadoc.plugin.version>3.5.0</maven.javadoc.plugin.version>
+		<maven.gpg.plugin.version>3.1.0</maven.gpg.plugin.version>
+		<nexus.staging.maven.plugin.version>1.6.13</nexus.staging.maven.plugin.version>
+		<maven.release.plugin.version>3.0.0</maven.release.plugin.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
