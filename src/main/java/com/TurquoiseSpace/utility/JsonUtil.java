@@ -2,6 +2,7 @@ package com.TurquoiseSpace.utility;
 
 import com.TurquoiseSpace.constant.ExceptionConstants;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -35,6 +36,16 @@ public class JsonUtil {
 		log.trace("convert json to object -> (className) {} (json) {}", clazz.getName(), json);
 		try {
 			return OBJECT_MAPPER.readValue(json, clazz);
+		} catch (Exception exception) {
+			log.error(ExceptionConstants.EXCEPTION_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
+		}
+		return null;
+	}
+
+	public static <T> T convertJsonToObject(String json, TypeReference<T> typeReference) {
+		log.trace("convert json to object -> (typeName) {} (json) {}", typeReference.getType().getTypeName(), json);
+		try {
+			return OBJECT_MAPPER.readValue(json, typeReference);
 		} catch (Exception exception) {
 			log.error(ExceptionConstants.EXCEPTION_ENCOUNTERED, exception.getClass().getName(), exception.getMessage(), exception);
 		}
